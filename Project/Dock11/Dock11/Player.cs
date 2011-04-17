@@ -25,21 +25,16 @@ namespace Dock11
         public Vector2 Speed;
         public Texture2D Sprite;
         public float SpeedPower;
-        public int Score;
         public Color TintColour;
         public Texture2D StarImage;
         public bool Blasting;
         public Texture2D ShadowSprite;
-        public SpriteFont tag;
-        public float tagOpacity = 6;
 
         public override void Initialize()
         {
             Blasting = false;
-            Score = 50;
             SpeedPower = 0.4f;
             Speed = new Vector2(0.01f, 0.01f);
-            tagOpacity = 6;
 
             base.Initialize();
         }
@@ -76,17 +71,8 @@ namespace Dock11
         {
             sb.Begin();
             //sb.Draw(ShadowSprite, new Vector2(Position.X - 20, Position.Y), null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
-            sb.Draw(Sprite, Position, null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
+            sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
             sb.End();
-        }
-
-        public void DrawTag(GameTime gametime, SpriteBatch sb, int playerNum, Vector3 Colour)
-        {
-            sb.Begin();
-            sb.DrawString(tag, "Player: " + playerNum.ToString(), new Vector2(Position.X + 40, Position.Y - 30), new Color(new Vector4(Colour, tagOpacity)));
-            sb.End();
-
-            tagOpacity -= 0.03f;
         }
     }
 }

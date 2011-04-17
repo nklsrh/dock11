@@ -30,7 +30,7 @@ namespace Dock11
             base.Initialize();
         }
 
-        public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player player)
+        public void Update(GameTime gameTime, Blast blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player player)
         {
             #region Menus
                 currentGamePadState = GamePad.GetState(PlayerIndex.One);
