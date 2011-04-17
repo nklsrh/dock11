@@ -20,8 +20,9 @@ namespace Dock11
 
         public Menu Menu;
 
-        public Player Player;
+        public Player Player1;
         public Stadium Stadium;
+        public Blast Blast;
 
         public Input Input;
 
@@ -38,12 +39,17 @@ namespace Dock11
 
         protected override void Initialize()
         {
-            Player = new Player(this);
+            Player1 = new Player(this);
             Stadium = new Stadium(this);
             Input = new Input(this);
+            Menu = new Menu(this);
+            Blast = new Blast(this);
 
-            Player.Initialize();
-            Player.Position = new Vector2(500, 800);
+            Player1.Initialize();
+            Stadium.Initialize(graphics);
+            Input.Initialize(this, Player1);
+
+            Menu.CurrentScreen = Menu.Card.InGame;
 
             base.Initialize();
         }
@@ -51,20 +57,15 @@ namespace Dock11
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            
             graphics.PreferredBackBufferHeight = 720;
             graphics.PreferredBackBufferWidth = 1280;
             graphics.ApplyChanges();
 
-            Player.Sprite = Content.Load<Texture2D>("Characters//Bob");
+            Player1.Sprite = Content.Load<Texture2D>("Characters//Bob");
             Stadium.Sprite = Content.Load<Texture2D>("Enviro//Level1");
             Stadium.CollisionMap = Content.Load<Texture2D>("Enviro//Level1Collision");
             
-        }
-
-        protected override void UnloadContent()
-        {
-
         }
 
         protected override void Update(GameTime gameTime)
@@ -72,9 +73,9 @@ namespace Dock11
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            Input.Update(gameTime);
-            Player.Update(gameTime);
-            Stadium.Update(gameTime);
+            Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player1);
+            Player1.Update(gameTime);
+            //Stadium.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -84,7 +85,7 @@ namespace Dock11
             GraphicsDevice.Clear(Color.DarkGray);
 
             Stadium.Draw(gameTime, spriteBatch);
-            Player.Draw(gameTime, spriteBatch);
+            Player1.Draw(gameTime, spriteBatch);
 
             base.Draw(gameTime);
         }

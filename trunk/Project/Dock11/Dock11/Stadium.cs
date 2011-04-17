@@ -66,25 +66,14 @@ namespace Dock11
                 {
                     Player.Position.Y = 120;
                 }
-                Player.Score = 0;
-                Player.tagOpacity = 1f;
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
-                Player.Score += gameTime.ElapsedGameTime.Milliseconds / 5;
                 GamePad.SetVibration((PlayerIndex)(index), 0.5f, 0.5f);
             }
             else
             {
                 GamePad.SetVibration((PlayerIndex)(index), 0f, 0f);
-                if (Player.Score > 0)
-                {
-                    Player.Score -= gameTime.ElapsedGameTime.Milliseconds / 15;
-                }
-                else
-                {
-                    Player.Score = 0;
-                }
                 Player.TintColour = bgColor;
             }     
         }
