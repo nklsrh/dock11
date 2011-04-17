@@ -1,0 +1,9 @@
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Dock11.exe
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Dock11.pdb
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\obj\x86\Debug\Dock11.exe
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\obj\x86\Debug\Dock11.pdb
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Characters\Bob.xnb
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1.xnb
+C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1Collision.xnb

@@ -1,0 +1,3 @@
+Content\Characters\Bob.xnb
+Content\Enviro\Level1.xnb
+Content\Enviro\Level1Collision.xnb
