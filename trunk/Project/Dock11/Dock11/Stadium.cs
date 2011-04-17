@@ -50,22 +50,7 @@ namespace Dock11
 
             if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
             {
-                if (Player.Speed.X < 0)
-                {
-                    Player.Position.X = 960;
-                }
-                else
-                {
-                    Player.Position.X = 420;
-                }
-                if (Player.Speed.Y < 0)
-                {
-                    Player.Position.Y = 650;
-                }
-                else
-                {
-                    Player.Position.Y = 120;
-                }
+
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
