@@ -74,8 +74,8 @@ namespace Dock11
                 this.Exit();
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player1);
-            Player1.Update(gameTime);
-            //Stadium.Update(gameTime);
+            Player1.Update(this, gameTime);
+            Stadium.Update(gameTime);
 
             base.Update(gameTime);
         }
