@@ -30,10 +30,12 @@ namespace Dock11
         public Texture2D CollisionMap;
         public Color bgColor;
         public Color[] bgColorArr;
+        public Vector2 StartPosition;
 
         public void Initialize(GraphicsDeviceManager graphics)
         {
             CollisionMap = new Texture2D(graphics.GraphicsDevice, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            
             base.Initialize();
         }
 
@@ -42,25 +44,32 @@ namespace Dock11
             base.Update(gameTime);
         }
 
-        public void CheckCollisionWithPlayer(Player Player, GameTime gameTime, int index)
+        public void CheckCollisionWithPlayer(Player Player, GameTime gameTime)
         {
             bgColorArr = new Color[1];
             CollisionMap.GetData<Color>(0, new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1), bgColorArr, 0, 1);
             bgColor = bgColorArr[0];
 
-            if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
+            if (bgColor == Color.Black) 
             {
-
+                GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
+                Player.Speed = -(Player.Speed) * 10;
+                Player.Friction(300);
             }
-            if (bgColor == Color.Cyan) //SCOREEEEE
+            if (bgColor == Color.Cyan) 
             {
-                GamePad.SetVibration((PlayerIndex)(index), 0.5f, 0.5f);
+                Player.Friction(20);
             }
-            else
+            if (bgColor == Color.Red)
             {
-                GamePad.SetVibration((PlayerIndex)(index), 0f, 0f);
-                Player.TintColour = bgColor;
-            }     
+                Player.Speed = -(Player.Speed) * 40f;
+                Player.Friction(400);
+            }
+            if (bgColor == Color.White) 
+            {
+                Player.Friction(20);
+                GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
+            }
         }
 
         public void CheckCollisionWithBots(Bot Bot, GameTime gameTime)
@@ -78,7 +87,7 @@ namespace Dock11
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Begin();
-            sb.Draw(Sprite, CameraPosition, null, Color.White, 0f, new Vector2(Sprite.Width/2, Sprite.Height/2), 1f, SpriteEffects.None, 1f);
+            sb.Draw(Sprite, Vector2.Zero, Color.White);
             //sb.Draw(CollisionMap, Vector2.Zero, Color.White);
             sb.End();
         }

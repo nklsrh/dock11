@@ -89,6 +89,7 @@
     <Compile Include="BotBlast.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Input.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

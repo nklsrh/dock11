@@ -30,11 +30,12 @@ namespace Dock11
         public bool Blasting;
         public Texture2D ShadowSprite;
 
-        public override void Initialize()
+        public void Initialize(Vector2 StartPosition)
         {
             Blasting = false;
             SpeedPower = 0.4f;
             Speed = new Vector2(0.01f, 0.01f);
+            Position = StartPosition;
 
             base.Initialize();
         }
@@ -64,6 +65,26 @@ namespace Dock11
             if (Speed.Y < -SpeedPower * 10)
             {
                 Speed.Y = -SpeedPower * 10;
+            }
+        }
+
+        public void Friction(float SurfaceFriction)
+        {
+            if (Speed.X > 0)
+            {
+                Speed.X -= SurfaceFriction / 100;
+            }
+            if (Speed.X < 0)
+            {
+                Speed.X += SurfaceFriction / 100;
+            }
+            if (Speed.Y > 0)
+            {
+                Speed.Y -= SurfaceFriction / 100;
+            }
+            if (Speed.Y < 0)
+            {
+                Speed.Y += SurfaceFriction / 100;
             }
         }
 
