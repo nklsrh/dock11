@@ -23,7 +23,7 @@ namespace Dock11
         public Player Player1;
         public Stadium Stadium;
         public Blast Blast;
-
+        public Level Level;
         public Input Input;
 
         public Game1()
@@ -44,8 +44,10 @@ namespace Dock11
             Input = new Input(this);
             Menu = new Menu(this);
             Blast = new Blast(this);
+            Level = new Level(this);
 
-            Player1.Initialize();
+            Level.Initialize(1);
+            Player1.Initialize(Level.StartPosition);
             Stadium.Initialize(graphics);
             Input.Initialize(this, Player1);
 
@@ -63,8 +65,8 @@ namespace Dock11
             graphics.ApplyChanges();
 
             Player1.Sprite = Content.Load<Texture2D>("Characters//Bob");
-            Stadium.Sprite = Content.Load<Texture2D>("Enviro//Level1");
-            Stadium.CollisionMap = Content.Load<Texture2D>("Enviro//Level1Collision");
+            Stadium.Sprite = Content.Load<Texture2D>("Enviro//Level" + Level.Number);
+            Stadium.CollisionMap = Content.Load<Texture2D>("Enviro//Level" + Level.Number + "Collision");
             
         }
 
@@ -75,8 +77,9 @@ namespace Dock11
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player1);
             Player1.Update(this, gameTime);
-            Stadium.Update(gameTime);
-
+            Stadium.CheckCollisionWithPlayer(Player1, gameTime);
+            
+            Window.Title = Player1.Position.ToString();
             base.Update(gameTime);
         }
 

@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Characters\Bob.xnb</Output>
-      <Time>2011-04-16T16:12:57.9160576+10:00</Time>
+      <Time>2011-04-18T11:24:50.4752642+10:00</Time>
     </Item>
     <Item>
       <Source>Enviro\Level1.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1Collision.xnb</Output>
-      <Time>2011-04-16T20:32:51.6832+10:00</Time>
+      <Time>2011-04-18T11:33:41.5782642+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

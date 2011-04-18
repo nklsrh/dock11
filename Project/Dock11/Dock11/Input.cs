@@ -76,15 +76,15 @@ namespace Dock11
                     }
                     if (currentGamePadState.ThumbSticks.Left.X != 0)
                     {
-                        //player[i].Speed.X += player[i].SpeedPower * currentGamePadState.ThumbSticks.Left.X;
+                        player.Speed.X += player.SpeedPower * currentGamePadState.ThumbSticks.Left.X;
                     }
                     if (currentGamePadState.ThumbSticks.Left.Y != 0)
                     {
-                        //player[i].Speed.Y -= player[i].SpeedPower * currentGamePadState.ThumbSticks.Left.Y;
+                        player.Speed.Y -= player.SpeedPower * currentGamePadState.ThumbSticks.Left.Y;
                     }
                     if (currentGamePadState.IsButtonUp(Buttons.Start) && previousGamePadState.IsButtonDown(Buttons.Start))
                     {
-                        
+                        game.Menu.CurrentScreen = Menu.Card.Paused;
                     }
                     if (currentGamePadState.Triggers.Right < 0.3)
                     {
