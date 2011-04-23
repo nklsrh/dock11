@@ -60,7 +60,7 @@ namespace blastrs
             Stadium = new Stadium(this);
             Input = new Input(this);         
 
-            Stadium.LevelNumber = 1;
+            Stadium.LevelNumber = 3;
             Stadium.Initialize(graphics);
 
             NumberOfPlayers = 2;
@@ -123,11 +123,19 @@ namespace blastrs
                     break;
                 case 2:
                     Stadium.InitiatePanel(0, 310, 100, false, this);
-                    Stadium.InitiatePanel(1, 910, 100, false, this);
-                    Stadium.InitiatePanel(2, 390, 100, false, this);
-                    Stadium.InitiatePanel(3, 830, 100, false, this);
-                    Stadium.InitiatePanel(4, 470, 100, false, this);
+                    Stadium.InitiatePanel(3, 910, 100, false, this);
+                    Stadium.InitiatePanel(1, 390, 100, false, this);
+                    Stadium.InitiatePanel(4, 830, 100, false, this);
+                    Stadium.InitiatePanel(2, 470, 100, false, this);
                     Stadium.InitiatePanel(5, 750, 100, false, this);
+                    break;
+                case 3:
+                    Stadium.InitiatePanel(0, 607, 221, true, this);
+                    Stadium.InitiatePanel(1, 687, 221, false, this);
+                    Stadium.InitiatePanel(2, 767, 221, false, this);
+                    Stadium.InitiatePanel(3, 607, 270, false, this);
+                    Stadium.InitiatePanel(4, 687, 320, false, this);
+                    Stadium.InitiatePanel(5, 767, 320, false, this);
                     break;
             }
         }
@@ -140,6 +148,8 @@ namespace blastrs
                 case 2:
                     Stadium.InitiateBox(0, 183, 427, false, Color.Orange, this);
                     Stadium.InitiateBox(1, 1140, 427, false, Color.Blue, this);
+                    break;
+                case 3:
                     break;
             }
         }
@@ -211,7 +221,10 @@ namespace blastrs
                         Stadium.Level1(NumberOfPlayers, Panels, Player);
                         break;
                     case 2:
-                        Stadium.Level2(NumberOfPlayers, Panels, Player, Boxes);
+                        Stadium.Level2(this, NumberOfPlayers, Panels, Player, Boxes);
+                        break;
+                    case 3:
+                        Stadium.Level3(NumberOfPlayers, Panels, Player);
                         break;
                 }
 

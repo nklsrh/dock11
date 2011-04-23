@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Characters\Bob.xnb</Output>
+      <Output>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Characters\Bob.xnb</Output>
       <Time>2011-04-18T11:24:50.4752642+10:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1.xnb</Output>
+      <Output>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1.xnb</Output>
       <Time>2011-04-16T13:56:12+10:00</Time>
     </Item>
     <Item>
@@ -25,18 +25,36 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1Collision.xnb</Output>
+      <Output>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1Collision.xnb</Output>
       <Time>2011-04-18T11:33:41.5782642+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Concept\2D Planning\Bob.png</Source>
+      <Name>Concept\2D Planning\Bob</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Concept\2D Planning\Bob.xnb</Output>
+      <Time>2011-04-20T12:49:32.8994811+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Concept\2D Planning\Level1\Floor.png</Source>
+      <Name>Concept\2D Planning\Level1\Floor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Concept\2D Planning\Level1\Floor.xnb</Output>
+      <Time>2011-04-20T12:49:52.227915+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -65,7 +83,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-03-29T18:08:13.1666074+11:00</Value>
+        <Value>2011-04-18T17:14:25.2281281+10:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

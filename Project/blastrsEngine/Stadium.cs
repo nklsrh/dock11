@@ -62,6 +62,10 @@ namespace blastrs
                     NumberOfBoxes = 2;
                     break;
                 case 3:
+                    StartPosition[0] = new Vector2(542, 257);
+                    StartPosition[1] = new Vector2(984, 317);
+                    NumberOfPanels = 6;
+                    NumberOfBoxes = 0;
                     break;
                 case 4:
                     break;
@@ -114,7 +118,7 @@ namespace blastrs
                 }
             }
         }
-        public void Level2(int NumberOfPlayers, Panel[] Panels, Player[] Player, Box[] Boxes)
+        public void Level2(Game1 game, int NumberOfPlayers, Panel[] Panels, Player[] Player, Box[] Boxes)
         {
             for (int s = 0; s < NumberOfPlayers; s++)
             {
@@ -132,17 +136,65 @@ namespace blastrs
                     }
                 }
             }
-            CheckBoxActivation(Boxes);
-            if (Boxes[0].isActivated && Boxes[1].isActivated)
+            CheckBoxActivation(Boxes, game);
+            if (Boxes[0].isActivated)
             {
-                for (int x = 0; x < NumberOfPanels; x++)
+                for (int x = 0; x < 3; x++)
+                {
+                    Panels[x].isVisible = true;
+                }
+            }
+            if (Boxes[1].isActivated)
+            {
+                for (int x = 3; x < 6; x++)
                 {
                     Panels[x].isVisible = true;
                 }
             }
         }
+        public void Level3(int NumberOfPlayers, Panel[] Panels, Player[] Player)
+        {
+            for (int s = 0; s < NumberOfPlayers; s++)
+            {
+                for (int r = 0; r < NumberOfPanels; r++)
+                {
+                    if (Panels[r].Rectangle.Contains((int)Player[s].Position.X, (int)Player[s].Position.Y) && Panels[r].isVisible)
+                    {
+                        Panels[r].isSteppedOn = true;
+                        Player[s].onPlatform[r] = true;
 
-        public void CheckBoxActivation(Box[] Boxes)
+                        switch(r){
+                            case 0:
+                            Panels[5].isVisible = true;
+                            break;
+                            case 1:
+                            Panels[4].isVisible = true;
+                            break;
+                            case 2:
+                            Panels[3].isVisible = true;
+                            break;
+                            case 3:
+                            Panels[1].isVisible = false;
+                            Panels[4].isVisible = false;
+                            break;
+                            case 4:
+                            Panels[2].isVisible = true;
+                            break;
+                            case 5:
+                            Panels[1].isVisible = true;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        Panels[r].isSteppedOn = false;
+                        Player[s].onPlatform[r] = false;
+                    }
+                }
+            }
+        }
+
+        public void CheckBoxActivation(Box[] Boxes, Game1 game)
         {
             for (int g = 0; g < NumberOfBoxes; g++)
             {
@@ -153,6 +205,10 @@ namespace blastrs
                 if (bgColor == Boxes[g].Colour)
                 {
                     Boxes[g].isActivated = true;
+                }
+                if (bgColor == new Color(88, 88, 88))
+                {
+                    game.NewGame();
                 }
             }
         }
