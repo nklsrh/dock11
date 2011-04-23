@@ -69,19 +69,6 @@ namespace Dock11
             base.Update(gameTime);
         }
 
-        public void UpdateForBot(GameTime gameTime, Bot bot)
-        {
-            if (!Ready)
-            {
-                if (Area.Intersects(new Rectangle((int)bot.Position.X, (int)bot.Position.Y, 1, 1)))
-                {
-                    bot.blastSpeed = Direction;
-                }
-            }
-
-            base.Update(gameTime);
-        }
-
         public void Draw(SpriteBatch sb)
         {
             sb.Begin();

@@ -21,6 +21,7 @@ namespace Dock11
         {
         }
 
+        public Vector2 PreviousPosition;
         public Vector2 Position;
         public Vector2 Speed;
         public Texture2D Sprite;
@@ -36,6 +37,7 @@ namespace Dock11
             SpeedPower = 0.4f;
             Speed = new Vector2(0.01f, 0.01f);
             Position = StartPosition;
+            PreviousPosition = Position;
 
             base.Initialize();
         }
@@ -45,6 +47,7 @@ namespace Dock11
             ClampSpeed();
             Position += Speed;
 
+            
             base.Update(gameTime);
         }
 

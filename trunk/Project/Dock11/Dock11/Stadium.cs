@@ -47,14 +47,18 @@ namespace Dock11
         public void CheckCollisionWithPlayer(Player Player, GameTime gameTime)
         {
             bgColorArr = new Color[1];
-            CollisionMap.GetData<Color>(0, new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1), bgColorArr, 0, 1);
-            bgColor = bgColorArr[0];
+            try
+            {
+                CollisionMap.GetData<Color>(0, new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1), bgColorArr, 0, 1);
+                bgColor = bgColorArr[0];
+            }
+            catch { }
 
             if (bgColor == Color.Black) 
             {
-                GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
-                Player.Speed = -(Player.Speed) * 10;
-                Player.Friction(300);
+                //GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
+                Player.Position = Player.PreviousPosition;
+                Player.Speed = Vector2.Zero;
             }
             if (bgColor == Color.Cyan) 
             {
@@ -68,19 +72,7 @@ namespace Dock11
             if (bgColor == Color.White) 
             {
                 Player.Friction(20);
-                GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
-            }
-        }
-
-        public void CheckCollisionWithBots(Bot Bot, GameTime gameTime)
-        {
-            bgColorArr = new Color[1];
-            CollisionMap.GetData<Color>(0, new Rectangle((int)Bot.Position.X, (int)Bot.Position.Y, 1, 1), bgColorArr, 0, 1);
-            bgColor = bgColorArr[0];
-
-            if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
-            {
-                Bot.Initialize(game);
+                //GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
             }
         }
 

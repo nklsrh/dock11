@@ -64,9 +64,9 @@ namespace Dock11
             graphics.PreferredBackBufferWidth = 1280;
             graphics.ApplyChanges();
 
-            Player1.Sprite = Content.Load<Texture2D>("Characters//Bob");
-            Stadium.Sprite = Content.Load<Texture2D>("Enviro//Level" + Level.Number);
-            Stadium.CollisionMap = Content.Load<Texture2D>("Enviro//Level" + Level.Number + "Collision");
+            Player1.Sprite = Content.Load<Texture2D>("Concept//2D Planning//Bob");
+            Stadium.Sprite = Content.Load<Texture2D>("Concept//2D Planning//Level" + Level.Number + "//Floor");
+            Stadium.CollisionMap = Content.Load<Texture2D>("Concept//2D Planning//Level" + Level.Number + "//Floor");
             
         }
 
@@ -78,7 +78,8 @@ namespace Dock11
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player1);
             Player1.Update(this, gameTime);
             Stadium.CheckCollisionWithPlayer(Player1, gameTime);
-            
+            Player1.PreviousPosition = Player1.Position;
+
             Window.Title = Player1.Position.ToString();
             base.Update(gameTime);
         }

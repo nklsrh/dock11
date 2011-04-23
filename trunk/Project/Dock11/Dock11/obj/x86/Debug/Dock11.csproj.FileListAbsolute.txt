@@ -7,3 +7,5 @@ C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\obj\x86\Debug\Dock11.pdb
 C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Characters\Bob.xnb
 C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1.xnb
 C:\Users\nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Enviro\Level1Collision.xnb
+C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Concept\2D Planning\Bob.xnb
+C:\Users\Nikhil\Documents\dock11\Project\Dock11\Dock11\bin\x86\Debug\Content\Concept\2D Planning\Level1\Floor.xnb

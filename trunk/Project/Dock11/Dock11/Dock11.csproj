@@ -83,10 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animation.cs" />
     <Compile Include="Blast.cs" />
-    <Compile Include="Bot.cs" />
-    <Compile Include="BotBlast.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Level.cs" />
